@@ -2,3 +2,11 @@ git add
 git commit
 git push
 
+###   vim reader.txt
+###	edit content 
+###	git commit -m "comment-content,default fix"
+###	git push
+ 
+ls
+
+learn to enlish
