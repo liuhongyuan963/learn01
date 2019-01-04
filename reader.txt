@@ -1,5 +1,5 @@
-git add 
-git commit
+git add .
+git commit -m "comment"
 git push
 
 ###   vim reader.txt
