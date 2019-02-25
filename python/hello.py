@@ -114,4 +114,70 @@
 #     insert(db,house)
 # """
 
+# from urllib.request import HTTPPasswordMgrWithDefaultRealm,HTTPBasicAuthHandler,build_opener
+# from urllib.error import URLError
+# username = 'username'
+# password = 'password'
+# url = 'http://localhost:5000'
+#
+# p = HTTPPasswordMgrWithDefaultRealm()
+# p.add_password(None,url,username,password)
+# auth_handler = HTTPBasicAuthHandler(p)
+# opener = build_opener(auth_handler)
+# try:
+#     result = opener.open(url)
+#     html = result.read().decode('utf-8')
+#     print(html)
+# except URLError as e:
+#     print(e.reason)
+
+
+import http.cookiejar,urllib.request
+# cookie = http.cookiejar.CookieJar()
+# handler = urllib.request.HTTPCookieProcessor(cookie)
+# opener = urllib.request.build_opener(handler)
+# response = opener.open('http://www.baidu.com')
+# for item in cookie:
+#     print(item.name+"="+item.value)
+#
+# filename = 'cookies.txt'
+# cookie = http.cookiejar.LWPCookieJar(filename)
+# handler = urllib.request.HTTPCookieProcessor(cookie)
+# opener = urllib.request.build_opener(handler)
+# response = opener.open('http://www.baidu.com')
+# cookie.save(ignore_discard=True,ignore_expires=True)
+#
+#
+# cookie = http.cookiejar.LWPCookieJar()
+# cookie.load('cookies.txt',ignore_discard=True,ignore_expires=True)
+# handler = urllib.request.HTTPCookieProcessor(cookie)
+# opener = urllib.request.build_opener(handler)
+# response = opener.open('http://www.baidu.com')
+# print(response.read().decode('utf-8'))
+
+
+
+# from urllib import request,error
+# # try:
+# #     response = request.urlopen('https://cuiqingcai.com/index.htm')
+# #     print(response.read().decode('utf-8'))
+# # except error.URLError as e:
+# #     print(e.reason)
+#
+#
+# try:
+#     response = request.urlopen('https://cuiqingcai.com/index.htm')
+# except error.HTTPError as e:
+#     print(e.reason,e.code,e.headers,sep='\n')
+
+
+from urllib import request,error
+try:
+    response = request.urlopen('https://cuiqingcai.com/index.htm')
+except error.HTTPError as e:
+    print(e.reason,e.code,e.headers,sep='\n')
+except error.URLError as e:
+    print(e.reason)
+else:
+    print('Request Successfully!!!!')
 
